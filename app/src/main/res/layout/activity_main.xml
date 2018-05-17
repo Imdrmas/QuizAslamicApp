@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LL"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    android:foregroundGravity="fill_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    tools:context="com.drmas.issam.quizeaslamic.MainActivity">
+
+    <!-- Start ToolBar Main -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal|center|start"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:background="@mipmap/ic_action_score"
+                android:contentDescription="@string/image_main"
+                android:onClick="heightScore" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/ic_share"
+                android:contentDescription="@string/image_main"
+                android:onClick="share" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorPrimary"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/app_name"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/ic_main_logo"
+                android:contentDescription="@string/image_main" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorBlack" />
+    <!-- End ToolBar Main -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <!-- Start First Layout islamic -->
+        <LinearLayout
+            android:id="@+id/islamic_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/LL"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="islamicClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/islamic_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/islamic"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End First Layout islamic -->
+
+
+            <!-- Start First Layout History -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:id="@+id/historyClicked"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="historyClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:background="@drawable/history_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/history"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <!-- End First Layout islamic -->
+
+        <!-- Start First Layout Capitals -->
+        <LinearLayout
+            android:id="@+id/capital_geographic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/islamic_history"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="165dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="capitalClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        android:background="@drawable/city_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/capitals"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End First Layout Capitals -->
+
+            <!-- Start First Layout Geographic -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="geographicClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/geography_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/Geographically"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <!-- End First Layout Geographic -->
+
+
+        <!-- Start First Layout Technology -->
+        <LinearLayout
+            android:id="@+id/technology_science"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/capital_geographic"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="315dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="technologyClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/technology_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/technology"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- End First Layout Technology -->
+
+            <!-- Start First Layout Science -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="scienceClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/seince_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/Sciences"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <!-- End First Layout Science -->
+
+        <!-- Start First Layout Art -->
+        <LinearLayout
+            android:id="@+id/art_sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/LL"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="artClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/arts_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/art"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End First Layout Art -->
+
+
+            <!-- Start First Layout Sport -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="sportClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:background="@drawable/sport_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/sport"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <!-- End First Layout Sport -->
+
+        <!-- Start First Layout Animals -->
+        <LinearLayout
+            android:id="@+id/animals_politic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/islamic_history"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="165dp">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="animalClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="68dp"
+                        android:background="@drawable/animal_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/animals"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End First Layout Animals -->
+
+            <!-- Start First Layout Politic -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="politicClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/politic_iocn"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/politic"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <!-- End First Layout Politic -->
+
+
+        <!-- Start First Layout Cultural -->
+        <LinearLayout
+            android:id="@+id/general_cultural"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/capital_geographic"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="315dp">
+
+            <!-- Start First Layout General -->
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="generalClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/general_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/general"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="10dp"
+                app:cardBackgroundColor="@color/colorGray"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/card_style"
+                    android:foregroundGravity="center_horizontal|fill_horizontal"
+                    android:gravity="center"
+                    android:onClick="culturalClicked"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        android:background="@drawable/inventor_icon"
+                        android:contentDescription="@string/image_main"
+                        android:padding="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/cultural"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End First Layout Cultural -->
+        </LinearLayout>
+        <!-- End First Layout General -->
+
+    </TableLayout>
+    </ScrollView>
+</LinearLayout>
